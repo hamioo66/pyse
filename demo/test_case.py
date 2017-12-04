@@ -1,6 +1,7 @@
+# -*-coding=UTF-8 -*-
 from pyse import TestCase, TestRunner
 from parameterized import parameterized
-
+# from pyse.running.TestRunner import TestRunner
 
 class BaiduTest(TestCase):
     ''' Baidu serach test case parameterized'''
@@ -10,7 +11,7 @@ class BaiduTest(TestCase):
         self.driver.open("https://www.baidu.com/")
         self.driver.type("id=>kw", "pyse")
         self.driver.click("css=>#su")
-        self.assertTitle("pyse_百度搜索")
+        self.assertTitle(u"pyse_百度搜索")
 
 
 class BaiduTest2(TestCase):
@@ -33,6 +34,10 @@ class BaiduTest2(TestCase):
 if __name__ == '__main__':
     runner = TestRunner('./','百度测试用例','测试环境：Chrome')
     runner.run()
+
+
+
+
 
 '''
 说明：
